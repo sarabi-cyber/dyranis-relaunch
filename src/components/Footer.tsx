@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => (
   <>
     <footer className="bg-navy-deep py-12 px-4 sm:px-6 lg:px-8">
@@ -7,16 +9,24 @@ const Footer = () => (
             Dyranis<span className="text-gold">.</span>Consultancy
           </div>
           <p className="text-white/35 text-sm leading-relaxed font-light max-w-[240px]">
-            Licensed insurance consultancy helping Kenyans find the right cover at the right price since 2018.
+            IRA-licensed insurance consultancy helping Kenyans find the right cover at the right price.
           </p>
         </div>
 
         <div>
           <h5 className="text-white/50 text-xs uppercase tracking-[0.1em] mb-4">Services</h5>
           <ul className="space-y-2.5">
-            {["Health Insurance", "Motor Insurance", "Life Insurance", "Business Cover", "Travel Insurance"].map((s) => (
-              <li key={s}>
-                <a href="#services" className="text-white/35 text-sm font-light hover:text-gold transition-colors">{s}</a>
+            {[
+              { label: "Motor Insurance", slug: "motor-insurance" },
+              { label: "Health Insurance", slug: "health-insurance" },
+              { label: "Education Insurance", slug: "education-insurance" },
+              { label: "Life Insurance", slug: "life-insurance" },
+              { label: "Commercial Insurance", slug: "commercial-insurance" },
+              { label: "WIBA Cover", slug: "wiba" },
+              { label: "Pension Plan", slug: "pension-plan" },
+            ].map((s) => (
+              <li key={s.slug}>
+                <Link to={`/services/${s.slug}`} className="text-white/35 text-sm font-light hover:text-gold transition-colors">{s.label}</Link>
               </li>
             ))}
           </ul>
@@ -25,11 +35,10 @@ const Footer = () => (
         <div>
           <h5 className="text-white/50 text-xs uppercase tracking-[0.1em] mb-4">Company</h5>
           <ul className="space-y-2.5">
-            {["About Us", "Our Partners", "How It Works", "Testimonials"].map((s) => (
-              <li key={s}>
-                <a href="#" className="text-white/35 text-sm font-light hover:text-gold transition-colors">{s}</a>
-              </li>
-            ))}
+            <li><Link to="/about" className="text-white/35 text-sm font-light hover:text-gold transition-colors">About Us</Link></li>
+            <li><Link to="/contact" className="text-white/35 text-sm font-light hover:text-gold transition-colors">Contact</Link></li>
+            <li><a href="/#partners" className="text-white/35 text-sm font-light hover:text-gold transition-colors">Our Partners</a></li>
+            <li><a href="/#process" className="text-white/35 text-sm font-light hover:text-gold transition-colors">How It Works</a></li>
           </ul>
         </div>
 
@@ -38,7 +47,8 @@ const Footer = () => (
           <ul className="space-y-2.5">
             <li><a href="https://dyranisconsultancy.co.ke" className="text-white/35 text-sm font-light hover:text-gold transition-colors">dyranisconsultancy.co.ke</a></li>
             <li><a href="mailto:info@dyranisconsultancy.co.ke" className="text-white/35 text-sm font-light hover:text-gold transition-colors">info@dyranisconsultancy.co.ke</a></li>
-            <li><a href="tel:+254700000000" className="text-white/35 text-sm font-light hover:text-gold transition-colors">0700 000 000</a></li>
+            <li><a href="tel:0721361188" className="text-white/35 text-sm font-light hover:text-gold transition-colors">0721 361 188</a></li>
+            <li><a href="https://wa.me/254721361188" className="text-white/35 text-sm font-light hover:text-gold transition-colors">WhatsApp Us</a></li>
             <li><span className="text-white/35 text-sm font-light">Nairobi, Kenya</span></li>
           </ul>
         </div>
