@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CtaSection = () => (
   <section id="contact" className="bg-navy py-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gold/10 rounded-full pointer-events-none" />
@@ -9,10 +11,10 @@ const CtaSection = () => (
         Get a free, no-obligation quote today. We'll compare Kenya's top insurers and bring you the best plan for your needs and budget.
       </p>
       <div className="flex flex-wrap gap-4 justify-center">
-        <a href="#" className="bg-gold text-navy-deep px-8 py-3.5 rounded font-medium hover:bg-gold-light transition-colors">
+        <Link to="/contact" className="bg-gold text-navy-deep px-8 py-3.5 rounded font-medium hover:bg-gold-light transition-colors">
           Get a Free Quote ↗
-        </a>
-        <a href="https://wa.me/254700000000" className="border border-white/30 text-white px-8 py-3.5 rounded hover:border-gold hover:text-gold transition-colors">
+        </Link>
+        <a href="https://wa.me/254721361188" className="border border-white/30 text-white px-8 py-3.5 rounded hover:border-gold hover:text-gold transition-colors">
           WhatsApp Us
         </a>
       </div>

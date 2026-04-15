@@ -1,4 +1,4 @@
-const partners = ["Britam", "Jubilee", "APA Insurance", "AAR", "CIC Group", "ICEA Lion", "Sanlam", "Octagon Africa"];
+const partners = ["Jubilee", "Britam", "AAR", "Old Mutual", "CIC", "ICEA Lion", "Heritage", "Madison", "GA", "Sanlam"];
 
 const PartnersSection = () => (
   <section id="partners" className="bg-card border-t border-border py-12 px-4 sm:px-6 lg:px-8">
