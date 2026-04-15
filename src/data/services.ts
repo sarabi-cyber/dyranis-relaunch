@@ -8,6 +8,9 @@ export interface ServiceData {
   features: string[];
   details: string;
   ctaText: string;
+  image: string;
+  seoKeywords: string[];
+  geoKeywords: string[];
 }
 
 export const services: ServiceData[] = [
@@ -28,6 +31,9 @@ export const services: ServiceData[] = [
     ],
     details: "Motor insurance is mandatory in Kenya under the Insurance (Motor Vehicle Third Party Risks) Act. We help you go beyond the minimum — comparing comprehensive policies that protect your vehicle against theft, accidents, fire, and third-party liability. Our partnerships with leading underwriters mean you get the best rates without compromising on cover.",
     ctaText: "Get a Motor Insurance Quote",
+    image: "/service-motor.jpeg",
+    seoKeywords: ["motor insurance Kenya", "car insurance", "comprehensive cover", "third-party insurance", "vehicle insurance quotes"],
+    geoKeywords: ["motor insurance Nairobi", "car insurance Kenya", "vehicle cover Mombasa", "PSV insurance Kenya", "fleet insurance East Africa"],
   },
   {
     slug: "health-insurance",
@@ -46,6 +52,9 @@ export const services: ServiceData[] = [
     ],
     details: "Healthcare costs in Kenya are rising fast. A good health insurance plan ensures you and your family can access quality treatment at top hospitals without worrying about bills. We work with Jubilee, Britam, AAR, CIC, Madison, and other top insurers to compare plans and find the perfect balance of benefits and affordability.",
     ctaText: "Get a Health Insurance Quote",
+    image: "/service-health.jpeg",
+    seoKeywords: ["health insurance Kenya", "medical cover", "family health plan", "maternity insurance", "hospital cover"],
+    geoKeywords: ["health insurance Nairobi", "medical cover Kenya", "family health plan Mombasa", "hospital insurance Kisumu", "health cover East Africa"],
   },
   {
     slug: "education-insurance",
@@ -64,6 +73,9 @@ export const services: ServiceData[] = [
     ],
     details: "Education insurance combines life cover with a savings plan designed to fund your children's education. If the policyholder passes away or becomes disabled, the insurer takes over premium payments and guarantees that school fees are covered. It's one of the smartest investments a Kenyan parent can make.",
     ctaText: "Get an Education Insurance Quote",
+    image: "/service-education.jpeg",
+    seoKeywords: ["education insurance Kenya", "school fees cover", "children education plan", "education savings plan", "school fees insurance"],
+    geoKeywords: ["education insurance Nairobi", "school fees cover Kenya", "education plan Mombasa", "children education Kisumu", "school fees protection East Africa"],
   },
   {
     slug: "life-insurance",
@@ -82,6 +94,9 @@ export const services: ServiceData[] = [
     ],
     details: "Life insurance is the cornerstone of financial planning. Whether you want pure protection (term life) or a policy that builds cash value over time (whole life or endowment), we help you compare options from Jubilee, Britam, Old Mutual, Sanlam, and other top insurers. Our advice is independent — we recommend what's best for your family, not what pays the highest commission.",
     ctaText: "Get a Life Insurance Quote",
+    image: "/service-life.jpeg",
+    seoKeywords: ["life insurance Kenya", "term life cover", "endowment plan", "whole life insurance", "family protection"],
+    geoKeywords: ["life insurance Nairobi", "term life Kenya", "endowment plan Mombasa", "life cover Kisumu", "family protection East Africa"],
   },
   {
     slug: "commercial-insurance",
@@ -100,6 +115,9 @@ export const services: ServiceData[] = [
     ],
     details: "Running a business in Kenya comes with risks — property damage, lawsuits, employee theft, and more. Commercial insurance protects your assets, revenue, and reputation. We work with you to identify risks specific to your industry and source the most competitive cover from our panel of leading underwriters.",
     ctaText: "Get a Commercial Insurance Quote",
+    image: "/service-commercial.jpeg",
+    seoKeywords: ["commercial insurance Kenya", "business insurance", "property cover", "liability insurance", "business protection"],
+    geoKeywords: ["commercial insurance Nairobi", "business cover Kenya", "property insurance Mombasa", "liability cover Kisumu", "business protection East Africa"],
   },
   {
     slug: "small-business-insurance",
@@ -118,6 +136,9 @@ export const services: ServiceData[] = [
     ],
     details: "Many Kenyan SMEs operate without insurance because they think it's too expensive or too complicated. We've changed that. Our small business packages start from as little as KES 15,000 per year and can be customized to cover exactly what matters most to your business — whether you run a shop, restaurant, salon, or office.",
     ctaText: "Get a Small Business Quote",
+    image: "/service-smallbiz.jpeg",
+    seoKeywords: ["SME insurance Kenya", "small business cover", "startup insurance", "affordable business insurance", "shop insurance"],
+    geoKeywords: ["SME insurance Nairobi", "small business Kenya", "startup cover Mombasa", "shop insurance Kisumu", "SME protection East Africa"],
   },
   {
     slug: "wiba",
@@ -136,6 +157,9 @@ export const services: ServiceData[] = [
     ],
     details: "Under the Work Injury Benefits Act (2007), every employer in Kenya — from large corporates to anyone with a domestic worker — must have WIBA insurance. Failure to comply can result in heavy fines and personal liability. We make it easy to get compliant quickly with affordable WIBA cover from our panel of trusted underwriters.",
     ctaText: "Get a WIBA Quote",
+    image: "/service-wiba.jpeg",
+    seoKeywords: ["WIBA insurance Kenya", "work injury cover", "employee insurance", "workplace injury", "WIBA compliance"],
+    geoKeywords: ["WIBA insurance Nairobi", "work injury Kenya", "employee cover Mombasa", "workplace insurance Kisumu", "WIBA compliance East Africa"],
   },
   {
     slug: "money-market-fund",
@@ -154,6 +178,9 @@ export const services: ServiceData[] = [
     ],
     details: "Money market funds invest in low-risk, short-term instruments like Treasury bills and commercial paper. They typically offer returns of 8–14% per annum — significantly more than the 2–4% you'd get from a bank savings account. We help you choose from CMA-regulated funds with strong track records and transparent fee structures.",
     ctaText: "Start Investing Today",
+    image: "/service-money.jpeg",
+    seoKeywords: ["money market fund Kenya", "investment returns", "savings fund", "CMA regulated funds", "high yield savings"],
+    geoKeywords: ["money market fund Nairobi", "investment Kenya", "savings fund Mombasa", "CMA funds Kisumu", "investment East Africa"],
   },
   {
     slug: "pension-plan",
@@ -172,5 +199,8 @@ export const services: ServiceData[] = [
     ],
     details: "Kenya's social security system (NSSF) provides only a basic pension. To maintain your lifestyle in retirement, you need a private pension plan. Contributions are tax-deductible up to KES 20,000 per month, making it one of the most tax-efficient ways to save. We connect you with RBA-regulated schemes managed by experienced fund managers like Old Mutual, Sanlam, Britam, and Jubilee.",
     ctaText: "Plan Your Retirement",
+    image: "/service-life.jpeg",
+    seoKeywords: ["pension plan Kenya", "retirement planning", "RBA pension", "tax relief pension", "retirement savings"],
+    geoKeywords: ["pension plan Nairobi", "retirement Kenya", "pension Mombasa", "retirement planning Kisumu", "pension East Africa"],
   },
 ];

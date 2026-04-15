@@ -4,6 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Lenis smooth scroll */
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
+}
+
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 @layer base {
   :root {
     --background: 36 33% 96%;
@@ -105,5 +134,16 @@
   }
   .section-sub {
     @apply text-muted-foreground text-base leading-relaxed font-light max-w-[540px];
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-lift {
+    @apply hover:-translate-y-1 transition-transform duration-300;
   }
 }

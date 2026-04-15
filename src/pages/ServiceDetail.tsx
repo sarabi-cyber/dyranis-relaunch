@@ -2,10 +2,21 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { services } from "@/data/services";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = services.find((s) => s.slug === slug);
+
+  useEffect(() => {
+    if (service) {
+      document.title = `${service.title} in Kenya | Dyranis Consultancy`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', service.heroDesc);
+      }
+    }
+  }, [service]);
 
   if (!service) return <Navigate to="/" replace />;
 

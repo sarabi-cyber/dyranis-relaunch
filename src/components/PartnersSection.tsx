@@ -1,4 +1,4 @@
-const partners = ["Jubilee", "Britam", "AAR", "Old Mutual", "CIC", "ICEA Lion", "Heritage", "Madison", "GA", "Sanlam"];
+import LogoCarousel from "./LogoCarousel";
 
 const PartnersSection = () => (
   <section id="partners" className="bg-card border-t border-border py-12 px-4 sm:px-6 lg:px-8">
@@ -6,13 +6,7 @@ const PartnersSection = () => (
       <p className="text-xs uppercase tracking-[0.1em] text-muted-foreground text-center mb-8">
         Trusted insurer partners we work with
       </p>
-      <div className="flex flex-wrap gap-4 justify-center">
-        {partners.map((p) => (
-          <div key={p} className="bg-cream border border-border rounded-md px-5 py-2.5 text-navy font-medium text-sm tracking-wide">
-            {p}
-          </div>
-        ))}
-      </div>
+      <LogoCarousel />
     </div>
   </section>
 );

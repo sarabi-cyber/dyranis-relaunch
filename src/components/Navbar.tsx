@@ -29,7 +29,9 @@ const Navbar = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[68px]">
         <Link to="/" className="flex items-center gap-2" onClick={closeAll}>
-          <img src={logo} alt="Dyranis Consultancy" className="h-10 w-auto" />
+          <div className="bg-gold/10 backdrop-blur-sm rounded-2xl p-2 hover:bg-gold/15 transition-colors">
+            <img src={logo} alt="Dyranis Consultancy" className="h-10 w-auto" />
+          </div>
         </Link>
 
         {/* Desktop links */}

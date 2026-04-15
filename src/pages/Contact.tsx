@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import QuoteCalculator from "@/components/QuoteCalculator";
 
 const coverOptions = [
   "Motor Insurance", "Health Insurance", "Education Insurance", "Life Insurance",
@@ -189,6 +190,16 @@ const Contact = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Quote Calculator */}
+      <section className="bg-card py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <div className="section-label">Estimate</div>
+          <h2 className="section-title">Quick Quote Calculator</h2>
+          <p className="section-sub mt-2 mb-10">Get an instant estimate for your insurance needs.</p>
+          <QuoteCalculator />
         </div>
       </section>
 
