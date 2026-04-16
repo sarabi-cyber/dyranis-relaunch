@@ -41,13 +41,13 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
-            <button onClick={() => navigate("/contact")} className="bg-gold text-navy-deep px-6 sm:px-8 py-3 sm:py-3.5 rounded font-medium hover:bg-gold-light transition-colors text-sm sm:text-base">
+            <button onClick={() => navigate("/contact")} className="border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded font-medium hover:border-gold hover:text-gold transition-colors text-sm sm:text-base">
               Get a Free Quote
             </button>
             <a href="https://wa.me/254721361188?text=Hello%20Dyranis%2C%20I%20need%20insurance%20advice." className="border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded hover:border-gold hover:text-gold transition-colors text-sm sm:text-base text-center">
               Talk to Us on WhatsApp
             </a>
-            <a href="tel:0721361188" className="border border-white/30 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded hover:border-gold hover:text-gold transition-colors text-sm sm:text-base text-center">
+            <a href="tel:0721361188" className="bg-gold text-navy-deep px-6 sm:px-8 py-3 sm:py-3.5 rounded font-medium hover:bg-gold-light transition-colors text-sm sm:text-base">
               📞 Call Now
             </a>
           </div>
