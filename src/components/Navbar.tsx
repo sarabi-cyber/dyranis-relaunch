@@ -78,15 +78,18 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:0721361188" className="text-white/60 text-sm hover:text-gold transition-colors">
-            📞 Call Now
-          </a>
           <Link
             to="/contact"
-            className="bg-gold text-navy-deep px-5 py-2 rounded text-sm font-medium tracking-wide hover:bg-gold-light transition-colors"
+            className="text-white/60 text-sm hover:text-gold transition-colors"
           >
             Get a Quote
           </Link>
+          <a
+            href="tel:0721361188"
+            className="bg-gold text-navy-deep px-5 py-2 rounded text-sm font-medium tracking-wide hover:bg-gold-light transition-colors"
+          >
+            📞 Call Now
+          </a>
         </div>
 
         {/* Mobile toggle */}
