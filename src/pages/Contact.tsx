@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import QuoteCalculator from "@/components/QuoteCalculator";
+import { trackPhoneCall, trackWhatsAppClick, trackFormSubmission, trackCTAClick } from "@/lib/gtm";
 
 const coverOptions = [
   "Motor Insurance", "Health Insurance", "Education Insurance", "Life Insurance",
@@ -42,6 +43,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackFormSubmission(form);
     const msg = `Hello Dyranis, I need advice.\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nCover: ${form.cover}\nDetails: ${form.details}`;
     window.open(`https://wa.me/254721361188?text=${encodeURIComponent(msg)}`, "_blank");
   };
@@ -49,6 +51,28 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+
+      {/* Sticky Call Button */}
+      <a 
+        href="tel:0721361188"
+        onClick={() => trackPhoneCall("0721361188")}
+        className="fixed bottom-6 right-6 z-40 bg-gold text-navy-deep p-4 rounded-full shadow-lg hover:bg-gold-light transition-all hover:scale-110 flex items-center justify-center"
+        title="Call us now"
+      >
+        <span className="text-2xl">📞</span>
+      </a>
+
+      {/* Urgent Call Banner */}
+      <section className="bg-gold text-navy-deep">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+            <span className="text-lg font-bold">⏱️ Need immediate assistance?</span>
+            <a href="tel:0721361188" onClick={() => trackPhoneCall("0721361188")} className="font-bold hover:underline flex items-center gap-2 whitespace-nowrap">
+              Call us now: 0721 361 188
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Hero */}
       <section className="bg-navy relative overflow-hidden">
@@ -64,7 +88,7 @@ const Contact = () => {
             Right <span className="text-gold">Cover</span>?
           </h1>
           <p className="text-white/65 text-lg leading-relaxed max-w-[600px] font-light">
-            Don't navigate the complex world of insurance alone. Let our team compare policies from multiple providers and find the perfect fit for your needs and budget.
+            Don't navigate the complex world of insurance alone. Let our expert team compare policies from multiple providers and find the perfect fit for your needs and budget. <span className="text-gold font-medium">Call us today for personalized guidance.</span>
           </p>
         </div>
       </section>
@@ -75,6 +99,7 @@ const Contact = () => {
           {/* Form */}
           <div>
             <h2 className="section-title">Request a Quote</h2>
+            <p className="text-muted-foreground text-sm mb-6 font-light">Fill out the form below or <a href="tel:0721361188" onClick={() => trackPhoneCall("0721361188")} className="text-gold font-medium hover:underline">call us directly at 0721 361 188</a> for immediate assistance.</p>
             <form onSubmit={handleSubmit} className="space-y-4 mt-6">
               <div>
                 <label className="block text-navy text-xs uppercase tracking-wider font-medium mb-1.5">Full Name *</label>
@@ -144,21 +169,28 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
+            {/* Prominent Call CTA */}
+            <div className="bg-gold/10 border-2 border-gold rounded-lg p-6">
+              <h3 className="text-navy font-bold text-lg mb-4">Speak with an Expert Today</h3>
+              <p className="text-navy text-sm mb-4 font-light">Get personalized advice and a quote tailored to your needs. Our team is ready to help.</p>
+              <a 
+                href="tel:0721361188"
+                onClick={() => trackPhoneCall("0721361188")}
+                className="inline-block w-full bg-gold text-navy-deep py-4 px-6 rounded-md font-bold text-lg hover:bg-gold-light transition-colors text-center"
+              >
+                📞 Call: 0721 361 188
+              </a>
+              <p className="text-navy text-xs mt-3 text-center font-light">Available Monday - Friday, 9 AM - 5 PM</p>
+            </div>
+
             <div>
-              <h3 className="text-navy font-bold text-lg mb-4">Contact Information</h3>
+              <h3 className="text-navy font-bold text-lg mb-4">Other Ways to Reach Us</h3>
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <span className="text-gold text-lg">📞</span>
-                  <div>
-                    <p className="text-navy text-sm font-medium">Phone</p>
-                    <a href="tel:0721361188" className="text-muted-foreground text-sm hover:text-gold transition-colors">0721 361 188</a>
-                  </div>
-                </div>
                 <div className="flex items-start gap-3">
                   <span className="text-gold text-lg">💬</span>
                   <div>
                     <p className="text-navy text-sm font-medium">WhatsApp</p>
-                    <a href="https://wa.me/254721361188" className="text-muted-foreground text-sm hover:text-gold transition-colors">Chat with us on WhatsApp</a>
+                    <a href="https://wa.me/254721361188" onClick={() => trackWhatsAppClick("254721361188")} className="text-muted-foreground text-sm hover:text-gold transition-colors">Chat with us on WhatsApp</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -208,7 +240,7 @@ const Contact = () => {
         <div className="max-w-3xl mx-auto">
           <div className="section-label">FAQ</div>
           <h2 className="section-title">Frequently Asked Questions</h2>
-          <p className="section-sub mt-2 mb-10">Common questions about insurance and our services.</p>
+          <p className="section-sub mt-2 mb-10">Common questions about insurance and our services. <span className="text-gold font-medium">Still have questions? Call us at 0721 361 188.</span></p>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div key={i} className="border border-border rounded-lg bg-card overflow-hidden">
@@ -226,6 +258,34 @@ const Contact = () => {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-navy py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-white font-heading text-3xl lg:text-4xl font-bold mb-4">
+            Don't Wait. Get Expert Advice <span className="text-gold">Today</span>
+          </h2>
+          <p className="text-white/65 text-lg mb-8 font-light">
+            Our insurance experts are standing by to answer your questions and find you the best coverage at the right price.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="tel:0721361188"
+              onClick={() => trackPhoneCall("0721361188")}
+              className="bg-gold text-navy-deep py-4 px-8 rounded-md font-bold hover:bg-gold-light transition-colors text-center"
+            >
+              📞 Call Now: 0721 361 188
+            </a>
+            <a 
+              href="https://wa.me/254721361188"
+              onClick={() => trackWhatsAppClick("254721361188")}
+              className="bg-white/10 text-white border border-white/30 py-4 px-8 rounded-md font-bold hover:bg-white/20 transition-colors text-center"
+            >
+              💬 WhatsApp Us
+            </a>
           </div>
         </div>
       </section>

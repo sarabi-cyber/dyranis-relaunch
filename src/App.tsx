@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import LenisScroll from "@/components/LenisScroll";
 import ScrollToTop from "@/components/ScrollToTop";
+import GTMInit from "@/components/GTMInit";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -18,6 +19,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <GTMInit />
       <LenisScroll />
       <Toaster />
       <Sonner />
