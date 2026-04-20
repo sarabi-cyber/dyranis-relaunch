@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { services } from "@/data/services";
 
 const Footer = () => (
   <>
@@ -16,17 +17,9 @@ const Footer = () => (
           <div>
             <h5 className="text-white/50 text-xs uppercase tracking-[0.1em] mb-4">Services</h5>
             <ul className="space-y-2.5">
-              {[
-                { label: "Motor Insurance", slug: "motor-insurance" },
-                { label: "Health Insurance", slug: "health-insurance" },
-                { label: "Education Insurance", slug: "education-insurance" },
-                { label: "Life Insurance", slug: "life-insurance" },
-                { label: "Commercial Insurance", slug: "commercial-insurance" },
-                { label: "WIBA Cover", slug: "wiba" },
-                { label: "Pension Plan", slug: "pension-plan" },
-              ].map((s) => (
+              {services.map((s) => (
                 <li key={s.slug}>
-                  <Link to={`/services/${s.slug}`} className="text-white/35 text-sm font-light hover:text-gold transition-colors">{s.label}</Link>
+                  <Link to={`/services/${s.slug}`} className="text-white/35 text-sm font-light hover:text-gold transition-colors">{s.title}</Link>
                 </li>
               ))}
             </ul>
@@ -104,9 +97,9 @@ const Footer = () => (
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-white/25 text-xs font-light">© 2026 Dyranis Consultancy. All rights reserved.</p>
         <div className="flex gap-6">
-          <a href="https://linkedin.com" className="text-white/35 hover:text-gold transition-colors text-xs">LinkedIn</a>
-          <a href="https://facebook.com" className="text-white/35 hover:text-gold transition-colors text-xs">Facebook</a>
-          <a href="https://twitter.com" className="text-white/35 hover:text-gold transition-colors text-xs">Twitter</a>
+          <a href="https://www.linkedin.com/company/dyranis-consultancy" className="text-white/35 hover:text-gold transition-colors text-xs">LinkedIn</a>
+          <a href="https://www.facebook.com/dyranisconsultancy" className="text-white/35 hover:text-gold transition-colors text-xs">Facebook</a>
+          <a href="https://twitter.com/dyranisconsultancy" className="text-white/35 hover:text-gold transition-colors text-xs">Twitter</a>
         </div>
         <div className="bg-gold/10 border border-gold/20 text-gold/70 px-3 py-1 rounded text-xs tracking-wider uppercase">
           IRA Licensed

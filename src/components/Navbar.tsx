@@ -37,9 +37,9 @@ const Navbar = () => {
         {/* Desktop links */}
         <ul className="hidden lg:flex gap-7 list-none items-center">
           <li>
-            <a href={isHome ? "#" : "/"} className="text-white/75 text-sm font-normal tracking-wider uppercase hover:text-gold transition-colors">
+            <Link to="/" className="text-white/75 text-sm font-normal tracking-wider uppercase hover:text-gold transition-colors">
               Home
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/about" className="text-white/75 text-sm font-normal tracking-wider uppercase hover:text-gold transition-colors">
